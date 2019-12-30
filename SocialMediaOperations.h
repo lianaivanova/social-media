@@ -6,19 +6,16 @@
 
 class SocialMediaOperations {
     SocialMedia socialMedia;
+    GraphOperations graphOperations;
 
-public:
-    SocialMediaOperations(SocialMedia &socialMedia);
 
-    void printCommands(iostream &ioS);
-
-    void getInput(iostream &ioS);
+    void printCommands(ostream &ioS);
 
     Status createUser(string name, string email, int age);
 
     Status deleteUser(string email);
 
-    Status findUser(string name, iostream &ioS);
+    Status findUser(string name, ostream &ioS);
 
     Status linkUsers(string name1, string name2, Type type);
 
@@ -28,6 +25,11 @@ public:
 
     // void recommendUsers(string name1);
 
+
+public:
+    SocialMediaOperations(SocialMedia &socialMedia, GraphOperations &graphOperations);
+
+    void getInput(ostream &oS, istream &iS);
 };
 
 

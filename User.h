@@ -13,10 +13,18 @@ class User {
     string email;
     int age;
     vector<string> bannedUsers;
+
 public:
+
+    bool containsBannedUser(string name);
+
+    const string &getUsername() const;
+
+    int getAge() const;
+
     User(string name, string email, int age);
 
-    const vector<string> &getBannedUsers() const;
+    vector<string> &getBannedUsers();
 
     void setBannedUsers(const vector<string> &bannedUsers);
 

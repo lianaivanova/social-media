@@ -23,6 +23,8 @@ User.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.cpp
 algorithm
 -
+stdlib.h
+-
 SocialMediaOperations.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
 

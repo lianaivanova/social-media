@@ -9,6 +9,7 @@ enum Type {
 
 enum Status {
     SUCCESS,
+    USER_EXISTS,
     USER1_NOT_FOUND,
     USER2_NOT_FOUND,
     USER1_BANNED,

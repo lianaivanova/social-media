@@ -1,11 +1,13 @@
 #include "SocialMedia.h"
 
-SocialMedia::SocialMedia() {}
-
-Graph *SocialMedia::getFriendships() const {
-    return friendships;
+SocialMedia::SocialMedia() {
+    this->network = new Graph();
 }
 
-void SocialMedia::setFriendships(Graph *friendships) {
-    SocialMedia::friendships = friendships;
+Graph *SocialMedia::getNetwork() const {
+    return network;
+}
+
+void SocialMedia::setNetwork(Graph *network) {
+    SocialMedia::network = network;
 }

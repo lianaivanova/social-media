@@ -5,14 +5,14 @@
 #include "User.h"
 
 class SocialMedia {
-    Graph *friendships;
+    Graph *network;
 
 public:
     SocialMedia();
 
-    Graph *getFriendships() const;
+    Graph *getNetwork() const;
 
-    void setFriendships(Graph *friendships);
+    void setNetwork(Graph *network);
 };
 
 

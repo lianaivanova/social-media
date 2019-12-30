@@ -1,6 +1,10 @@
 #include <iostream>
-
+#include <fstream>
+#include "SocialMediaOperations.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    SocialMedia socialMedia;
+    GraphOperations graphOperations(socialMedia.getNetwork());
+    SocialMediaOperations socialMediaOperations(socialMedia, graphOperations);
+    socialMediaOperations.getInput(cout, cin);
     return 0;
 }
