@@ -8,12 +8,14 @@ User::User(string name, string email, int age) {
     this->age = age;
 }
 
-vector<string> &User::getBannedUsers() {
-    return bannedUsers;
+User::User(string name) {
+    this->username = name;
+    this->email = "";
+    this->age = 0;
 }
 
-void User::setBannedUsers(const vector<string> &bannedUsers) {
-    User::bannedUsers = bannedUsers;
+vector<string> &User::getBannedUsers() {
+    return bannedUsers;
 }
 
 const string &User::getUsername() const {
@@ -33,3 +35,14 @@ bool User::containsBannedUser(string name) {
     return false;
 }
 
+const string &User::getEmail() const {
+    return email;
+}
+
+void User::setEmail(const string &email) {
+    User::email = email;
+}
+
+void User::setAge(int age) {
+    User::age = age;
+}

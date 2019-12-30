@@ -11,8 +11,6 @@ public:
     SocialMedia();
 
     Graph *getNetwork() const;
-
-    void setNetwork(Graph *network);
 };
 
 

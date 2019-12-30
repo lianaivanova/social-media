@@ -16,6 +16,7 @@ enum Status {
     USER2_BANNED,
     USERS_LINKED,
     USERS_DELINKED,
+    USER_ALREADY_BANNED
 };
 
 #endif //SOCIALMEDIA_TYPE_H

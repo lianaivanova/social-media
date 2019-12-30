@@ -127,9 +127,6 @@ GraphOperations::GraphOperations(Graph *graph) {
     this->graph = graph;
 }
 
-GraphOperations::GraphOperations() {
-
-}
 
 bool GraphOperations::contains(vector<string> &visited, string name) {
     for (int i = 0; i < visited.size(); i++) {
@@ -139,4 +136,9 @@ bool GraphOperations::contains(vector<string> &visited, string name) {
     }
     return false;
 }
+
+Graph *GraphOperations::getGraph() {
+    return graph;
+}
+
 

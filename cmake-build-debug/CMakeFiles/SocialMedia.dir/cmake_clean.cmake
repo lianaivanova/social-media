@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SocialMedia.dir/Graph.cpp.o"
   "CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o"
   "CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o"
+  "CMakeFiles/SocialMedia.dir/StreamServices.cpp.o"
   "CMakeFiles/SocialMedia.dir/User.cpp.o"
   "CMakeFiles/SocialMedia.dir/main.cpp.o"
   "SocialMedia.exe"

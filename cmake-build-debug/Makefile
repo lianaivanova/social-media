@@ -204,6 +204,33 @@ SocialMediaOperations.cpp.s:
 	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.s
 .PHONY : SocialMediaOperations.cpp.s
 
+StreamServices.o: StreamServices.cpp.o
+
+.PHONY : StreamServices.o
+
+# target to build an object file
+StreamServices.cpp.o:
+	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/StreamServices.cpp.o
+.PHONY : StreamServices.cpp.o
+
+StreamServices.i: StreamServices.cpp.i
+
+.PHONY : StreamServices.i
+
+# target to preprocess a source file
+StreamServices.cpp.i:
+	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/StreamServices.cpp.i
+.PHONY : StreamServices.cpp.i
+
+StreamServices.s: StreamServices.cpp.s
+
+.PHONY : StreamServices.s
+
+# target to generate assembly for a file
+StreamServices.cpp.s:
+	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/StreamServices.cpp.s
+.PHONY : StreamServices.cpp.s
+
 User.o: User.cpp.o
 
 .PHONY : User.o
@@ -276,6 +303,9 @@ help:
 	@echo "... SocialMediaOperations.o"
 	@echo "... SocialMediaOperations.i"
 	@echo "... SocialMediaOperations.s"
+	@echo "... StreamServices.o"
+	@echo "... StreamServices.i"
+	@echo "... StreamServices.s"
 	@echo "... User.o"
 	@echo "... User.i"
 	@echo "... User.s"

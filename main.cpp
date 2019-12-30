@@ -1,10 +1,10 @@
 #include <iostream>
-#include <fstream>
-#include "SocialMediaOperations.h"
+#include "StreamServices.h"
 int main() {
     SocialMedia socialMedia;
     GraphOperations graphOperations(socialMedia.getNetwork());
     SocialMediaOperations socialMediaOperations(socialMedia, graphOperations);
-    socialMediaOperations.getInput(cout, cin);
+    StreamServices streamServices(socialMediaOperations);
+    streamServices.getInput(cout, cin);
     return 0;
 }

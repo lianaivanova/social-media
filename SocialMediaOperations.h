@@ -7,9 +7,8 @@
 class SocialMediaOperations {
     SocialMedia socialMedia;
     GraphOperations graphOperations;
-
-
-    void printCommands(ostream &ioS);
+public:
+    SocialMediaOperations(SocialMedia &socialMedia, GraphOperations &graphOperations);
 
     Status createUser(string name, string email, int age);
 
@@ -23,13 +22,10 @@ class SocialMediaOperations {
 
     Status banUser(string name1, string name2);
 
-    // void recommendUsers(string name1);
+    GraphOperations &getGraphOperations();
 
-
-public:
-    SocialMediaOperations(SocialMedia &socialMedia, GraphOperations &graphOperations);
-
-    void getInput(ostream &oS, istream &iS);
+    //TODO
+    //void recommendUsers(string name1);
 };
 
 

@@ -3,108 +3,6 @@
 #include "SocialMediaOperations.h"
 
 
-Type getType(int typeNum) {
-    switch (typeNum) {
-        case 1:
-            return BESTIE;
-        case 2:
-            return RELATIVE;
-        default:
-            return NORMAL;
-    }
-}
-
-void toLower(string &command) {
-    for_each(command.begin(), command.end(), [](char &c) {
-        c = ::toupper(c);
-    });
-}
-
-void SocialMediaOperations::getInput(ostream &oS, istream &iS) {
-    string command;
-    string name1;
-    string name2;
-    string email;
-    int age;
-    int type;
-    Status result;
-    printCommands(oS);
-    do {
-        oS << "Enter command and needed information: ";
-        iS >> command;
-        toLower(command);
-        if (command == "CREATE") {
-            iS >> name1 >> email >> age;
-            result = createUser(name1, email, age);
-            if (result != SUCCESS) {
-                oS << "FAIL: " << name1 << " already exists." << endl;
-            } else {
-                oS << "User " << name1 << " created." << endl;
-            }
-        } else if (command == "DELETE") {
-            iS >> email;
-            result = deleteUser(email);
-            if (result != SUCCESS) {
-                oS << "FAIL: " << name1 << " doesn't exist." << endl;
-            } else {
-                oS << "User " << name1 << " deleted." << endl;
-            }
-        } else if (command == "LINK") {
-            iS >> name1 >> name2 >> type;
-            result = linkUsers(name1, name2, getType(type));
-            if (result == USER1_NOT_FOUND) {
-                oS << "FAIL: " << name1 << " doesn't exist." << endl;
-            } else if (result == USER2_NOT_FOUND) {
-                oS << "FAIL: " << name2 << " doesn't exist." << endl;
-            } else if (result == USERS_LINKED) {
-                oS << "FAIL: Users already linked." << endl;
-            } else if (result == USER1_BANNED) {
-                oS << "FAIL: " << name1 << " banned." << endl;
-            } else if (result == USER2_BANNED) {
-                oS << "FAIL: " << name2 << " banned." << endl;
-            } else {
-                oS << "Users linked." << endl;
-            }
-        } else if (command == "FIND") {
-            iS >> name1;
-            if (findUser(name1, oS) != SUCCESS) {
-                oS << "None" << endl;
-            }
-        } else if (command == "DELINK") {
-            iS >> name1 >> name2;
-            result = delinkUsers(name1, name2);
-            if (result == USER1_NOT_FOUND) {
-                oS << "FAIL: " << name1 << " doesn't exist." << endl;
-            } else if (result == USER2_NOT_FOUND) {
-                oS << "FAIL: " << name2 << " doesn't exist." << endl;
-            } else if (result == USERS_DELINKED) {
-                oS << "FAIL: Users not linked." << endl;
-            } else {
-                oS << "Users delinked." << endl;
-            }
-        } else if (command == "BAN") {
-            iS >> name1 >> name2;
-            result = banUser(name1, name2);
-            if (result == USER2_BANNED) {
-                oS << "FAIL: User already banned." << endl;
-            } else {
-                oS << "User " << name2 << " banned." << endl;
-            }
-        }
-
-    } while (command != "EXIT");
-}
-
-void SocialMediaOperations::printCommands(ostream &ioS) {
-    ioS << "> to create new user: CREATE <name> <e-mail> <age> \n"
-           "> to delete existing user: DELETE <e-mail> \n"
-           "> to link two users as friends: LINK <user1_name> <user2_name> <type_code>, \n"
-           "   Type codes: 1 - bestie, 2 - relative, 3 - normal \n"
-           "> to search for user: FIND <name>\n"
-           "> to remove friendship of two users: DELINK <user1_name> <user2_name>\n"
-           "> to get friend recommendations: RECOMMEND <name>\n";
-}
-
 Status SocialMediaOperations::createUser(string name, string email, int age) {
     if (graphOperations.userExists(name)) {
         return USER_EXISTS;
@@ -116,7 +14,20 @@ Status SocialMediaOperations::createUser(string name, string email, int age) {
 }
 
 Status SocialMediaOperations::deleteUser(string email) {
-    return USERS_DELINKED;
+    int size = socialMedia.getNetwork()->getNodes().size();
+    int position;
+    for (int i = 0; i < size; i++) {
+        if (socialMedia.getNetwork()->getNodes()[i]->getUser()->getEmail() == email) {
+            Node *user = socialMedia.getNetwork()->getNodes()[i];
+            for (int i = 0; i < user->getFriendships().size(); ++i) {
+                Node *userFriend = user->getFriendships()[i]->getUserFriend();
+                delinkUsers(userFriend->getUser()->getUsername(), user->getUser()->getUsername());
+            }
+            socialMedia.getNetwork()->getNodes().erase(socialMedia.getNetwork()->getNodes().begin() + i);
+            return SUCCESS;
+        }
+    }
+    return USER1_NOT_FOUND;
 }
 
 Status SocialMediaOperations::findUser(string name, ostream &ioS) {
@@ -198,14 +109,19 @@ Status SocialMediaOperations::banUser(string name1, string name2) {
     } else if (user2 == nullptr) {
         return USER2_NOT_FOUND;
     } else if (user1->getUser()->containsBannedUser(name2)) {
-        return USER2_BANNED;
+        return USER_ALREADY_BANNED;
     }
     user1->getUser()->getBannedUsers().push_back(name2);
     return SUCCESS;
 }
 
-SocialMediaOperations::SocialMediaOperations(SocialMedia &socialMedia, GraphOperations &graphOperations) {
-    this->socialMedia = socialMedia;
-    this->graphOperations = graphOperations;
+SocialMediaOperations::SocialMediaOperations(SocialMedia &socialMedia, GraphOperations &graphOperations)
+        : socialMedia(socialMedia), graphOperations(graphOperations) {}
+
+GraphOperations &SocialMediaOperations::getGraphOperations() {
+    return graphOperations;
 }
+
+
+
 

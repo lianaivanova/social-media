@@ -98,6 +98,12 @@
 		<Unit filename="/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h">
 			<Option target="SocialMedia"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/D/CLionProjects/SocialMedia/StreamServices.cpp">
+			<Option target="SocialMedia"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/D/CLionProjects/SocialMedia/StreamServices.h">
+			<Option target="SocialMedia"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/D/CLionProjects/SocialMedia/Type.h">
 			<Option target="SocialMedia"/>
 		</Unit>
