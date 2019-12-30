@@ -1,0 +1,20 @@
+#ifndef SOCIALMEDIA_TYPE_H
+#define SOCIALMEDIA_TYPE_H
+
+enum Type {
+    BESTIE = 3,
+    RELATIVE = 2,
+    NORMAL = 1
+};
+
+enum Status {
+    SUCCESS,
+    USER1_NOT_FOUND,
+    USER2_NOT_FOUND,
+    USER1_BANNED,
+    USER2_BANNED,
+    USERS_LINKED,
+    USERS_DELINKED,
+};
+
+#endif //SOCIALMEDIA_TYPE_H

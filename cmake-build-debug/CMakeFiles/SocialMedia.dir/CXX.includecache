@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/Graph.h
+vector
+-
+User.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/User.h
+Type.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/Type.h
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMedia.h
+Graph.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/Graph.h
+User.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/User.h
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.cpp
+algorithm
+-
+SocialMediaOperations.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
+SocialMedia.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMedia.h
+Type.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/Type.h
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/Type.h
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/User.h
+iostream
+-
+vector
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/SocialMedia.dir/main.cpp.o CMakeFiles/SocialMedia.dir/User.cpp.o CMakeFiles/SocialMedia.dir/Graph.cpp.o CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o  -o SocialMedia.exe -Wl,--out-implib,libSocialMedia.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
