@@ -1,5 +1,6 @@
 #include <iostream>
 #include "User.h"
+
 using namespace std;
 
 User::User(string name, string email, int age) {
@@ -45,4 +46,16 @@ void User::setEmail(const string &email) {
 
 void User::setAge(int age) {
     User::age = age;
+}
+
+
+ostream &operator<<(ostream &oS, const User &user) {
+    oS << user.username << ";" << user.email << ";" << user.age << ";";
+    for (int i = 0; i < user.bannedUsers.size(); ++i) {
+        oS << user.bannedUsers[i];
+        if (i < user.bannedUsers.size() - 1) {
+            oS << ",";
+        }
+    }
+    oS << ";";
 }

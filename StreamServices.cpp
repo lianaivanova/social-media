@@ -7,7 +7,7 @@ StreamServices::StreamServices(SocialMediaOperations &socialMediaOperations1)
 
 Type StreamServices::getType(int typeNum) {
     switch (typeNum) {
-        case 1:
+        case 3:
             return BESTIE;
         case 2:
             return RELATIVE;
@@ -33,6 +33,7 @@ void StreamServices::printCommands(ostream &oS) {
           "> remove friendship of two users: DELINK <user1_name> <user2_name>\n"
           "> get friend recommendations: RECOMMEND <name>\n"
           "> load data from file: LOAD <file_name>\n"
+          "> save data to file: SAVE <file_name>\n"
           "> legend: HELP\n\n";
 }
 
@@ -101,6 +102,12 @@ void StreamServices::getInput(ostream &oS, istream &iS) {
         } else if (command == "LOAD") {
             iS >> file;
             loadData(file);
+        } else if (command == "RECOMMEND") {
+            iS >> name1;
+            socialMediaOperations.recommendUsers(name1, oS);
+        } else if (command == "SAVE") {
+            iS >> file;
+            saveData(file);
         }
 
     } while (command != "EXIT");
@@ -126,7 +133,7 @@ void StreamServices::validate(Status result, string name1, string name2, ostream
 
 void StreamServices::loadData(string fileName) {
     ifstream iFile(fileName);
-    if(!iFile){
+    if (!iFile) {
         cerr << "File could not be opened.\n";
         return;
     }
@@ -139,6 +146,7 @@ void StreamServices::loadData(string fileName) {
         buildUser(line, user);
         iFile.ignore();
     }
+    iFile.close();
 }
 
 
@@ -147,8 +155,8 @@ void StreamServices::buildUser(string line, User *user) {
     char currentChar;
     int counter = 0;
     string friendName;
-    Node * node = socialMediaOperations.getGraphOperations().findUser(user->getUsername());
-    if(node == nullptr){
+    Node *node = socialMediaOperations.getGraphOperations().findUser(user->getUsername());
+    if (node == nullptr) {
         node = new Node(user);
         socialMediaOperations.getGraphOperations().getGraph()->getNodes().push_back(node);
     } else {
@@ -164,13 +172,14 @@ void StreamServices::buildUser(string line, User *user) {
                 user->setAge(stoi(info));
                 counter++;
             } else if (counter == 2) {
-                if(!info.empty()) {
+                if (!info.empty()) {
                     user->getBannedUsers().push_back(info);
                 }
                 counter++;
             } else if (counter == 3) {
-                if(!info.empty()) {
+                if (!info.empty()) {
                     createFriend(friendName, stoi(info), user);
+                    return;
                 }
             }
             info = "";
@@ -201,4 +210,25 @@ void StreamServices::createFriend(string name, int typeNum, User *user) {
         socialMediaOperations.getGraphOperations().getGraph()->getNodes().push_back(node);
     }
     socialMediaOperations.linkUsers(name, user->getUsername(), getType(typeNum));
+}
+
+void StreamServices::saveData(string fileName) {
+    ofstream oFile(fileName, ofstream::app);
+    if (!oFile) {
+        cerr << "File could not be opened.\n";
+        return;
+    }
+    int size = socialMediaOperations.getGraphOperations().getGraph()->getNodes().size();
+    vector<Node *> users = socialMediaOperations.getGraphOperations().getGraph()->getNodes();
+    oFile.seekp(0, ios::end);
+    if (oFile.tellp() != 0) {
+        oFile << endl;
+    }
+    for (int i = 0; i < size; ++i) {
+        oFile << *users[i];
+        if (i < size - 1) {
+            oFile << endl;
+        }
+    }
+    oFile.close();
 }

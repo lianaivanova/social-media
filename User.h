@@ -1,7 +1,6 @@
 #ifndef SOCIALMEDIA_USER_H
 #define SOCIALMEDIA_USER_H
 
-
 #include <iostream>
 #include <vector>
 
@@ -32,6 +31,8 @@ public:
     vector<string> &getBannedUsers();
 
     bool containsBannedUser(string name);
+
+    friend ostream &operator<<(ostream &oS, const User &user);
 
 };
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "StreamServices.h"
+
 int main() {
     SocialMedia socialMedia;
     GraphOperations graphOperations(socialMedia.getNetwork());

@@ -14,7 +14,7 @@ public:
 
     Status deleteUser(string email);
 
-    Status findUser(string name, ostream &ioS);
+    Status findUser(string name, ostream &oS);
 
     Status linkUsers(string name1, string name2, Type type);
 
@@ -24,8 +24,7 @@ public:
 
     GraphOperations &getGraphOperations();
 
-    //TODO
-    //void recommendUsers(string name1);
+    Status recommendUsers(string name1, ostream &oS);
 };
 
 

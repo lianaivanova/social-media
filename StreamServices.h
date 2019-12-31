@@ -14,7 +14,7 @@ class StreamServices {
 
     void printCommands(ostream &oS);
 
-    void buildUser(string line, User* user);
+    void buildUser(string line, User *user);
 
     void createFriend(string name, int typeNum, User *user);
 
@@ -25,7 +25,7 @@ public:
 
     void loadData(string fileName);
 
-    void saveData();
+    void saveData(string fileName);
 
 };
 

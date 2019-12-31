@@ -122,6 +122,21 @@ GraphOperations &SocialMediaOperations::getGraphOperations() {
     return graphOperations;
 }
 
+Status SocialMediaOperations::recommendUsers(string name, ostream &oS) {
+    Node *user = graphOperations.findUser(name);
+    if(user == nullptr){
+        return USER1_NOT_FOUND;
+    }
+    vector<Pair *> suggestions = graphOperations.DFSGeneral(user);
+    for (int i = 0; i < suggestions.size(); ++i) {
+        if(i >= 30){
+            return SUCCESS;
+        }
+        oS << suggestions[i]->node->getUser()->getUsername() << ",";
+    }
+    return SUCCESS;
+}
+
 
 
 
