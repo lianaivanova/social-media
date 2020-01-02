@@ -22,7 +22,6 @@ void StreamServices::toLower(string &command) {
     });
 }
 
-
 void StreamServices::printCommands(ostream &oS) {
     oS << "Commands:\n"
           "> create new user: CREATE <name> <e-mail> <age> \n"
@@ -34,7 +33,8 @@ void StreamServices::printCommands(ostream &oS) {
           "> get friend recommendations: RECOMMEND <name>\n"
           "> load data from file: LOAD <file_name>\n"
           "> save data to file: SAVE <file_name>\n"
-          "> legend: HELP\n\n";
+          "> print legend: HELP\n"
+          "> EXIT\n\n";
 }
 
 void StreamServices::getInput(ostream &oS, istream &iS) {
@@ -101,15 +101,20 @@ void StreamServices::getInput(ostream &oS, istream &iS) {
             printCommands(oS);
         } else if (command == "LOAD") {
             iS >> file;
+            oS << "Loading..." << endl;
             loadData(file);
+            oS << "Done!" << endl;
         } else if (command == "RECOMMEND") {
             iS >> name1;
-            socialMediaOperations.recommendUsers(name1, oS);
+            result = socialMediaOperations.recommendUsers(name1, oS);
+            if(result != SUCCESS){
+                oS << "FAIL: " << name1 << " doesn't exist." << endl;
+            }
         } else if (command == "SAVE") {
             iS >> file;
             saveData(file);
+            oS << "Data saved!" << endl;
         }
-
     } while (command != "EXIT");
 }
 

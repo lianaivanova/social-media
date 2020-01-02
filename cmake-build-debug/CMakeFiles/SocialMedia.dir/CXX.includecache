@@ -7,32 +7,38 @@
 #IncludeRegexTransform: 
 
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/Graph.h
-vector
--
 User.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/User.h
 Type.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/Type.h
 
-/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMedia.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/GraphOperations.h
 Graph.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/Graph.h
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMedia.h
+GraphOperations.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/GraphOperations.h
 User.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/User.h
-
-/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.cpp
-algorithm
--
-stdlib.h
--
-SocialMediaOperations.h
-/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
 
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
 SocialMedia.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMedia.h
 Type.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/Type.h
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/StreamServices.cpp
+StreamServices.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/StreamServices.h
+algorithm
+-
+fstream
+-
+
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/StreamServices.h
+SocialMediaOperations.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
 
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/Type.h
 

@@ -1,10 +1,10 @@
 #include <algorithm>
-#include <stdlib.h>
 #include "SocialMediaOperations.h"
 
 
 Status SocialMediaOperations::createUser(string name, string email, int age) {
-    if (graphOperations.userExists(name)) {
+    Node *foundUser = graphOperations.findUser(name);
+    if (foundUser != nullptr) {
         return USER_EXISTS;
     }
     User *user = new User(name, email, age);
@@ -15,7 +15,6 @@ Status SocialMediaOperations::createUser(string name, string email, int age) {
 
 Status SocialMediaOperations::deleteUser(string email) {
     int size = socialMedia.getNetwork()->getNodes().size();
-    int position;
     for (int i = 0; i < size; i++) {
         if (socialMedia.getNetwork()->getNodes()[i]->getUser()->getEmail() == email) {
             Node *user = socialMedia.getNetwork()->getNodes()[i];
@@ -42,7 +41,7 @@ Status SocialMediaOperations::findUser(string name, ostream &oS) {
     vector<Friendship *> &friends = node->getFriendships();
     int size = friends.size();
     for (std::size_t i = 0; i < size; ++i) {
-        if(i != 0){
+        if (i != 0) {
             oS << ", ";
         }
         oS << friends[i]->getUserFriend()->getUser()->getUsername();
@@ -75,8 +74,6 @@ Status SocialMediaOperations::linkUsers(string name1, string name2, Type type) {
     }
     user1->getFriendships().push_back(new Friendship(user2, type));
     user2->getFriendships().push_back(new Friendship(user1, type));
-//    delete user1;
-//    delete user2;
     return SUCCESS;
 }
 
@@ -128,15 +125,18 @@ GraphOperations &SocialMediaOperations::getGraphOperations() {
 
 Status SocialMediaOperations::recommendUsers(string name, ostream &oS) {
     Node *user = graphOperations.findUser(name);
-    if(user == nullptr){
+    if (user == nullptr) {
         return USER1_NOT_FOUND;
     }
     vector<Pair *> suggestions = graphOperations.DFSGeneral(user);
     for (int i = 0; i < suggestions.size(); ++i) {
-        if(i >= 30){
+        if (i >= 30) {
             return SUCCESS;
         }
-        oS << suggestions[i]->node->getUser()->getUsername() << ",";
+        if (i != 0) {
+            oS << ",";
+        }
+        oS << suggestions[i]->node->getUser()->getUsername();
     }
     return SUCCESS;
 }

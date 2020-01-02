@@ -2,9 +2,9 @@
 #define SOCIALMEDIA_TYPE_H
 
 enum Type {
-    BESTIE = 3,
-    RELATIVE = 2,
-    NORMAL = 1
+    BESTIE,
+    RELATIVE,
+    NORMAL
 };
 
 enum Status {

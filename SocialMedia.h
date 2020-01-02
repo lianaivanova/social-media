@@ -1,7 +1,7 @@
 #ifndef SOCIALMEDIA_SOCIALMEDIA_H
 #define SOCIALMEDIA_SOCIALMEDIA_H
 
-#include "Graph.h"
+#include "GraphOperations.h"
 #include "User.h"
 
 class SocialMedia {

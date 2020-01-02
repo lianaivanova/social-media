@@ -150,6 +150,33 @@ Graph.cpp.s:
 	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
+GraphOperations.o: GraphOperations.cpp.o
+
+.PHONY : GraphOperations.o
+
+# target to build an object file
+GraphOperations.cpp.o:
+	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o
+.PHONY : GraphOperations.cpp.o
+
+GraphOperations.i: GraphOperations.cpp.i
+
+.PHONY : GraphOperations.i
+
+# target to preprocess a source file
+GraphOperations.cpp.i:
+	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/GraphOperations.cpp.i
+.PHONY : GraphOperations.cpp.i
+
+GraphOperations.s: GraphOperations.cpp.s
+
+.PHONY : GraphOperations.s
+
+# target to generate assembly for a file
+GraphOperations.cpp.s:
+	$(MAKE) -f CMakeFiles/SocialMedia.dir/build.make CMakeFiles/SocialMedia.dir/GraphOperations.cpp.s
+.PHONY : GraphOperations.cpp.s
+
 SocialMedia.o: SocialMedia.cpp.o
 
 .PHONY : SocialMedia.o
@@ -297,6 +324,9 @@ help:
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
+	@echo "... GraphOperations.o"
+	@echo "... GraphOperations.i"
+	@echo "... GraphOperations.s"
 	@echo "... SocialMedia.o"
 	@echo "... SocialMedia.i"
 	@echo "... SocialMedia.s"

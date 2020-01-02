@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/cygdrive/c/Users/D/CLionProjects/SocialMedia/Graph.cpp" "/cygdrive/c/Users/D/CLionProjects/SocialMedia/cmake-build-debug/CMakeFiles/SocialMedia.dir/Graph.cpp.o"
+  "/cygdrive/c/Users/D/CLionProjects/SocialMedia/GraphOperations.cpp" "/cygdrive/c/Users/D/CLionProjects/SocialMedia/cmake-build-debug/CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o"
   "/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMedia.cpp" "/cygdrive/c/Users/D/CLionProjects/SocialMedia/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o"
   "/cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.cpp" "/cygdrive/c/Users/D/CLionProjects/SocialMedia/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o"
   "/cygdrive/c/Users/D/CLionProjects/SocialMedia/StreamServices.cpp" "/cygdrive/c/Users/D/CLionProjects/SocialMedia/cmake-build-debug/CMakeFiles/SocialMedia.dir/StreamServices.cpp.o"
