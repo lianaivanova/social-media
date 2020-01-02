@@ -11,18 +11,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c8243a9-47c8-4844-b09d-25f3360e1c40" name="Default Changelist" comment="">
+    <list default="true" id="9c8243a9-47c8-4844-b09d-25f3360e1c40" name="Default Changelist" comment="Added friend suggestions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Graph.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/Graph.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocialMediaOperations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMediaOperations.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialMediaOperations.h" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMediaOperations.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamServices.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/StreamServices.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamServices.h" beforeDir="false" afterPath="$PROJECT_DIR$/StreamServices.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/Graph.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/Graph.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/User.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/User.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SocialMedia.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SocialMedia.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +81,8 @@
       <option name="presentableId" value="Default" />
       <updated>1577709019562</updated>
       <workItem from="1577709020876" duration="29157000" />
-      <workItem from="1577782830609" duration="14579000" />
+      <workItem from="1577782830609" duration="14691000" />
+      <workItem from="1577969585066" duration="3083000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented main functionalities.">
       <created>1577723754525</created>
@@ -96,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577746236448</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added friend suggestions.">
+      <created>1577803972384</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577803972384</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +129,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Implemented main functionalities." />
     <MESSAGE value="Added reading data from file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added reading data from file" />
+    <MESSAGE value="Added friend suggestions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added friend suggestions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -147,13 +157,8 @@
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/SocialMediaOperations.cpp</url>
-          <line>76</line>
+          <line>79</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/StreamServices.cpp</url>
-          <line>142</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/StreamServices.cpp</url>
@@ -171,9 +176,9 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Graph.cpp</url>
-          <line>287</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/StreamServices.cpp</url>
+          <line>142</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

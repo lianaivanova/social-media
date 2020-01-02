@@ -30,21 +30,24 @@ Status SocialMediaOperations::deleteUser(string email) {
     return USER1_NOT_FOUND;
 }
 
-Status SocialMediaOperations::findUser(string name, ostream &ioS) {
+Status SocialMediaOperations::findUser(string name, ostream &oS) {
     Node *node = graphOperations.findUser(name);
     if (node == nullptr) {
         return USER1_NOT_FOUND;
     }
-    ioS << "USER:\n----- \n";
-    ioS << "Name: " << node->getUser()->getUsername() << endl;
-    ioS << "Age: " << node->getUser()->getAge() << endl;
-    ioS << "Friends: ";
+    oS << "USER\n----- \n";
+    oS << "Name: " << node->getUser()->getUsername() << endl;
+    oS << "Age: " << node->getUser()->getAge() << endl;
+    oS << "Friends: ";
     vector<Friendship *> &friends = node->getFriendships();
     int size = friends.size();
     for (std::size_t i = 0; i < size; ++i) {
-        ioS << friends[i]->getUserFriend()->getUser()->getUsername() << ", ";
+        if(i != 0){
+            oS << ", ";
+        }
+        oS << friends[i]->getUserFriend()->getUser()->getUsername();
     }
-    ioS << endl;
+    oS << endl;
     return SUCCESS;
 }
 
@@ -112,6 +115,7 @@ Status SocialMediaOperations::banUser(string name1, string name2) {
         return USER_ALREADY_BANNED;
     }
     user1->getUser()->getBannedUsers().push_back(name2);
+    delinkUsers(user1->getUser()->getUsername(), name2);
     return SUCCESS;
 }
 

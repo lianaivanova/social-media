@@ -67,7 +67,7 @@ ostream &operator<<(ostream &oS, const Node &node) {
             oS << ",";
         }
     }
-    oS << ";";
+    oS << ";\n";
 }
 
 bool Node::operator<(const Node &node) {

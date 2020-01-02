@@ -14,9 +14,9 @@ class StreamServices {
 
     void printCommands(ostream &oS);
 
-    void buildUser(string line, User *user);
+    void buildUser(User *user, ifstream &iFile);
 
-    void createFriend(string name, int typeNum, User *user);
+    void createFriend(User *user, string name, int typeNum);
 
 public:
     StreamServices(SocialMediaOperations &socialMediaOperations1);

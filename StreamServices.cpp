@@ -141,20 +141,20 @@ void StreamServices::loadData(string fileName) {
     string line;
     while (iFile.good()) {
         getline(iFile, name, ';');
-        getline(iFile, line, '\r');
+        if(name.empty()){
+            break;
+        }
         User *user = new User(name);
-        buildUser(line, user);
-        iFile.ignore();
+        buildUser(user, iFile);
     }
     iFile.close();
 }
 
 
-void StreamServices::buildUser(string line, User *user) {
+void StreamServices::buildUser(User *user, ifstream &iFile) {
     string info;
-    char currentChar;
-    int counter = 0;
     string friendName;
+    string friends;
     Node *node = socialMediaOperations.getGraphOperations().findUser(user->getUsername());
     if (node == nullptr) {
         node = new Node(user);
@@ -162,47 +162,49 @@ void StreamServices::buildUser(string line, User *user) {
     } else {
         user = node->getUser();
     }
-    for (int i = 0; i < line.size(); i++) {
-        currentChar = line[i];
-        if (currentChar == ';') {
-            if (counter == 0) {
-                user->setEmail(info);
-                counter++;
-            } else if (counter == 1) {
-                user->setAge(stoi(info));
-                counter++;
-            } else if (counter == 2) {
-                if (!info.empty()) {
-                    user->getBannedUsers().push_back(info);
-                }
-                counter++;
-            } else if (counter == 3) {
-                if (!info.empty()) {
-                    createFriend(friendName, stoi(info), user);
-                    return;
-                }
-            }
+    getline(iFile, info, ';');
+    user->setEmail(info);
+    getline(iFile, info, ';');
+    user->setAge(stoi(info));
+    info = "";
+
+    getline(iFile, friends, ';');
+    for (int i = 0; i < friends.size(); ++i) {
+        char letter = friends[i];
+        if(letter == ','){
+            user->getBannedUsers().push_back(info);
             info = "";
-        } else if (currentChar == ',') {
-            if (counter == 2) {
-                user->getBannedUsers().push_back(info);
-            } else {
-                createFriend(friendName, stoi(info), user);
-            }
+        } else {
+            info += letter;
+        }
+    }
+    if(!info.empty()){
+        user->getBannedUsers().push_back(info);
+        info = "";
+    }
+
+    getline(iFile, friends, '\n');
+    for (int i = 0; i < friends.size(); i++) {
+        char letter = friends[i];
+        if(letter == ','){
+            createFriend(user, friendName, stoi(info));
             info = "";
             friendName = "";
-        } else if (currentChar == '(') {
+        } else if(letter == '('){
             friendName = info;
             info = "";
-        } else if (currentChar == ')') {
+        } else if(letter == ')'){
             continue;
+        } else if(letter == ';'){
+            createFriend(user, friendName, stoi(info));
+            return;
         } else {
-            info += currentChar;
+            info += letter;
         }
     }
 }
 
-void StreamServices::createFriend(string name, int typeNum, User *user) {
+void StreamServices::createFriend(User *user, string name, int typeNum) {
     Node *node = socialMediaOperations.getGraphOperations().findUser(name);
     if (node == nullptr) {
         User *userFriend = new User(name);
@@ -221,14 +223,8 @@ void StreamServices::saveData(string fileName) {
     int size = socialMediaOperations.getGraphOperations().getGraph()->getNodes().size();
     vector<Node *> users = socialMediaOperations.getGraphOperations().getGraph()->getNodes();
     oFile.seekp(0, ios::end);
-    if (oFile.tellp() != 0) {
-        oFile << endl;
-    }
     for (int i = 0; i < size; ++i) {
         oFile << *users[i];
-        if (i < size - 1) {
-            oFile << endl;
-        }
     }
     oFile.close();
 }
