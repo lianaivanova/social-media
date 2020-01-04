@@ -130,7 +130,7 @@ void GraphOperations::getFriendliestUsers(vector<Pair *> &vector, Node *user) {
     int size = users.size();
     for (int i = 0; i < size; ++i) {
         string friendName = users[i]->getUser()->getUsername();
-        if (friendName != user->getUser()->getUsername() && !user->getUser()->containsBannedUser(friendName)) {
+        if (friendName != user->getUser()->getUsername() && !user->getUser()->containsBannedUser(friendName) && !user->containsFriend(friendName)) {
             Pair *userFriend = new Pair(users[i], users[i]->getFriendships().size());
             vector.push_back(userFriend);
         }

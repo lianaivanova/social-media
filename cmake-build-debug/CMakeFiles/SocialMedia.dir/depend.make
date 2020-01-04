@@ -6,13 +6,22 @@ CMakeFiles/SocialMedia.dir/Graph.cpp.o: ../Graph.h
 CMakeFiles/SocialMedia.dir/Graph.cpp.o: ../Type.h
 CMakeFiles/SocialMedia.dir/Graph.cpp.o: ../User.h
 
+CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o: ../Graph.h
+CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o: ../GraphOperations.cpp
+CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o: ../GraphOperations.h
+CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o: ../QuickSortImpl.h
+CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o: ../Type.h
+CMakeFiles/SocialMedia.dir/GraphOperations.cpp.o: ../User.h
+
 CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o: ../Graph.h
+CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o: ../GraphOperations.h
 CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o: ../SocialMedia.cpp
 CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o: ../SocialMedia.h
 CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o: ../Type.h
 CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o: ../User.h
 
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../Graph.h
+CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../GraphOperations.h
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../SocialMedia.h
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../SocialMediaOperations.cpp
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../SocialMediaOperations.h
@@ -20,6 +29,7 @@ CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../Type.h
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../User.h
 
 CMakeFiles/SocialMedia.dir/StreamServices.cpp.o: ../Graph.h
+CMakeFiles/SocialMedia.dir/StreamServices.cpp.o: ../GraphOperations.h
 CMakeFiles/SocialMedia.dir/StreamServices.cpp.o: ../SocialMedia.h
 CMakeFiles/SocialMedia.dir/StreamServices.cpp.o: ../SocialMediaOperations.h
 CMakeFiles/SocialMedia.dir/StreamServices.cpp.o: ../StreamServices.cpp
@@ -31,6 +41,7 @@ CMakeFiles/SocialMedia.dir/User.cpp.o: ../User.cpp
 CMakeFiles/SocialMedia.dir/User.cpp.o: ../User.h
 
 CMakeFiles/SocialMedia.dir/main.cpp.o: ../Graph.h
+CMakeFiles/SocialMedia.dir/main.cpp.o: ../GraphOperations.h
 CMakeFiles/SocialMedia.dir/main.cpp.o: ../SocialMedia.h
 CMakeFiles/SocialMedia.dir/main.cpp.o: ../SocialMediaOperations.h
 CMakeFiles/SocialMedia.dir/main.cpp.o: ../StreamServices.h

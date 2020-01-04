@@ -134,7 +134,7 @@ Status SocialMediaOperations::recommendUsers(string name, ostream &oS) {
             return SUCCESS;
         }
         if (i != 0) {
-            oS << ",";
+            oS << ", ";
         }
         oS << suggestions[i]->node->getUser()->getUsername();
     }
