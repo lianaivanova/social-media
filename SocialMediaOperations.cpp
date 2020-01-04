@@ -40,7 +40,10 @@ Status SocialMediaOperations::findUser(string name, ostream &oS) {
     oS << "Friends: ";
     vector<Friendship *> &friends = node->getFriendships();
     int size = friends.size();
-    for (std::size_t i = 0; i < size; ++i) {
+    if(size == 0){
+        oS << "none";
+    }
+    for (int i = 0; i < size; i++) {
         if (i != 0) {
             oS << ", ";
         }
@@ -129,6 +132,9 @@ Status SocialMediaOperations::recommendUsers(string name, ostream &oS) {
         return USER1_NOT_FOUND;
     }
     vector<Pair *> suggestions = graphOperations.DFSGeneral(user);
+    if(suggestions.empty()){
+        oS << "No users to recommend." << endl;
+    }
     for (int i = 0; i < suggestions.size(); ++i) {
         if (i >= 30) {
             return SUCCESS;
@@ -136,7 +142,7 @@ Status SocialMediaOperations::recommendUsers(string name, ostream &oS) {
         if (i != 0) {
             oS << ", ";
         }
-        oS << suggestions[i]->node->getUser()->getUsername();
+        oS << suggestions[i]->node->getUser()->getUsername() << endl;
     }
     return SUCCESS;
 }

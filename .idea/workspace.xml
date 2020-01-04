@@ -13,15 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9c8243a9-47c8-4844-b09d-25f3360e1c40" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphOperations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GraphOperations.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocialMediaOperations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SocialMediaOperations.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SocialMedia.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SocialMedia.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SocialMedia.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/rcm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/rcm.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +79,7 @@
       <workItem from="1578002280159" duration="118000" />
       <workItem from="1578002428384" duration="226000" />
       <workItem from="1578045966726" duration="2318000" />
-      <workItem from="1578126540169" duration="1924000" />
+      <workItem from="1578126540169" duration="2426000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented main functionalities.">
       <created>1577723754525</created>
@@ -121,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578001791744</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed .getFriendliestUsers validation">
+      <created>1578128718697</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578128718697</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +150,8 @@
     <MESSAGE value="Added friend suggestions." />
     <MESSAGE value="Fixed reading and writing data with files" />
     <MESSAGE value="First finished implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="First finished implementation" />
+    <MESSAGE value="Fixed .getFriendliestUsers validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed .getFriendliestUsers validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -165,7 +168,7 @@
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/SocialMediaOperations.cpp</url>
-          <line>76</line>
+          <line>79</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
