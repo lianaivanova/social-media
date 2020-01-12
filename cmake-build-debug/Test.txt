@@ -1,0 +1,13 @@
+Peter;pesho@mail.bg;25;;Stella(1),Stanislav(3);
+Ivan;vanko@gmail.com;19;Todor,Tanya;Katya(2),Marina(2),Vlado(3);
+Stella;s.petrova@abv.bg;28;Tanya;Peter(1),Stanislav(3);
+Todor;todor@gmail.com;19;;;
+Katya;kateto@abv.bg;35;Todor;Ivan(2),Stoyan(1),Maya(1),Bella(3),Ani(3);
+Marina;popova@mail.bg;50;Peter,Ani;Ivan(2),Bella(3);
+Vlado;vlad0@yahoo.com;29;Stella;Ivan(3),Stoyan(3);
+Maya;maya55@gmail.com;34;Marina;Katya(1),Stanislav(3),Ani(1),Stoyan(1);
+Stoyan;stoyo@abv.bg;43;Stanislav;Vlado(3),Katya(1),Tanya(2),Ani(3),Maya(1);
+Bella;anabel@gmail.com;16;;Katya(3),Tanya(2);
+Ani;a.p99@gmail.com;43;;Katya(3),Maya(1),Stoyan(3),Stanislav(3);
+Stanislav;stan25@gmail.com;31;Stoyan,Tanya;Stella(3),Maya(3),Ani(3),Peter(3);
+Tanya;tanya44@mail.bg;20;Peter;Stoyan(2),Bella(2);
