@@ -1,7 +1,7 @@
 #include "GraphOperations.h"
 #include <queue>
 #include "QuickSortImpl.h"
-
+using namespace std;
 
 Node *GraphOperations::findUser(string name) {
     return BFSGeneral(name);
@@ -124,16 +124,25 @@ bool Pair::operator<(const Pair &pair) {
     return weight < pair.weight;
 }
 
+int GraphOperations::getWeight(Node* user){
+    int weight = 0;
+    int size = user->getFriendships().size();
+    for (int i = 0; i < size; ++i) {
+        weight += getFriendshipWeight(user->getFriendships()[i]);
+    }
+    return weight;
+}
 
-void GraphOperations::getFriendliestUsers(vector<Pair *> &vector, Node *user) {
-    std::vector<Node *> &users = getGraph()->getNodes();
+void GraphOperations::getFriendliestUsers(vector<Pair *> &suggestions, Node *user) {
+    std::vector<Node*> users = getGraph()->getNodes();
     int size = users.size();
     for (int i = 0; i < size; ++i) {
         string friendName = users[i]->getUser()->getUsername();
-        if (friendName != user->getUser()->getUsername() && !user->getUser()->containsBannedUser(friendName) && !user->containsFriend(friendName)) {
-            Pair *userFriend = new Pair(users[i], users[i]->getFriendships().size());
-            vector.push_back(userFriend);
+        if (friendName != user->getUser()->getUsername() && !user->getUser()->containsBannedUser(friendName)
+            && !user->containsFriend(friendName) && !users[i]->getUser()->containsBannedUser(user->getUser()->getUsername())) {
+            Pair *userFriend = new Pair(users[i], getWeight(users[i]));
+            suggestions.push_back(userFriend);
         }
     }
-    quickSort(vector, 0, vector.size() - 1);
+    quickSort(suggestions, 0, suggestions.size() - 1);
 }

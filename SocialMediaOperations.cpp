@@ -1,6 +1,6 @@
 #include <algorithm>
 #include "SocialMediaOperations.h"
-
+#include "QuickSortImpl.h"
 
 Status SocialMediaOperations::createUser(string name, string email, int age) {
     Node *foundUser = graphOperations.findUser(name);
@@ -137,13 +137,14 @@ Status SocialMediaOperations::recommendUsers(string name, ostream &oS) {
     }
     for (int i = 0; i < suggestions.size(); ++i) {
         if (i >= 30) {
-            return SUCCESS;
+            break;
         }
         if (i != 0) {
             oS << ", ";
         }
-        oS << suggestions[i]->node->getUser()->getUsername() << endl;
+        oS << suggestions[i]->node->getUser()->getUsername();
     }
+    oS << endl;
     return SUCCESS;
 }
 

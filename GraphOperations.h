@@ -18,6 +18,8 @@ class GraphOperations {
 
     bool contains(vector<string> &visited, string name);
 
+    int getWeight(Node* user);
+
 public:
     GraphOperations(Graph *graph);
 
@@ -40,7 +42,7 @@ public:
     void
     addToMutualFriends(Node *node, vector<Friendship *> &currentMutualFriends, vector<Friendship *> &mutualFriends);
 
-    void getFriendliestUsers(vector<Pair *> &vector, Node *user);
+    void getFriendliestUsers(vector<Pair *> &suggestions, Node *user);
 };
 
 

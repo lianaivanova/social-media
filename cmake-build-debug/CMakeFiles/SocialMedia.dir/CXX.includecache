@@ -16,6 +16,8 @@ Type.h
 Graph.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/Graph.h
 
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/QuickSortImpl.h
+
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMedia.h
 GraphOperations.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/GraphOperations.h
@@ -27,6 +29,10 @@ algorithm
 -
 SocialMediaOperations.h
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
+QuickSortImpl.h
+/cygdrive/c/Users/D/CLionProjects/SocialMedia/QuickSortImpl.h
+bits/stdc++.h
+-
 
 /cygdrive/c/Users/D/CLionProjects/SocialMedia/SocialMediaOperations.h
 SocialMedia.h

@@ -189,6 +189,9 @@ void StreamServices::buildUser(User *user, ifstream &iFile) {
     }
 
     getline(iFile, friends, '\n');
+    if(friends[0] == ';'){
+        return;
+    }
     for (int i = 0; i < friends.size(); i++) {
         char letter = friends[i];
         if(letter == ','){

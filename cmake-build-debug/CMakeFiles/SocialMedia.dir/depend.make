@@ -22,6 +22,7 @@ CMakeFiles/SocialMedia.dir/SocialMedia.cpp.o: ../User.h
 
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../Graph.h
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../GraphOperations.h
+CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../QuickSortImpl.h
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../SocialMedia.h
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../SocialMediaOperations.cpp
 CMakeFiles/SocialMedia.dir/SocialMediaOperations.cpp.o: ../SocialMediaOperations.h
