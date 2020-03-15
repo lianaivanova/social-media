@@ -2,7 +2,7 @@
 
 ### Implemented using RELP (Read eval print loop), which supports the following commands:
 
-● CREATE <name> <e-mail> <age>
+● CREATE (name, e-mail, age)
   - Creates a new user
 ● DELETE <e-mail>
   - Deletes the user with the given e-mail
